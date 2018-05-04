@@ -1,0 +1,30 @@
+{
+  "name": "projectManager",
+  "version": "1.0.0",
+  "description": "Project and employee management application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js"
+  },
+  "repository": {
+    "url": "https://github.com/RandyDavis/FS-React-Project-Manager",
+    "type": "git"
+  },
+  "author": "Randy Davis <randy_davis@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "concurrently": "^3.5.1",
+    "express": "^4.16.3",
+    "gravatar": "^1.6.0",
+    "jsonwebtoken": "^8.2.1",
+    "mongoose": "^5.0.17",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "validator": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.3"
+  }
+}
