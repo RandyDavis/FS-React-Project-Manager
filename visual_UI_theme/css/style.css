@@ -97,6 +97,10 @@ h2 {
     border: 1px solid rgba(0,0,0,.125);
     margin: 15px 0;
 }
+
+.overview-card a img {
+    width: 100%
+}
 /* OVERVIEW CARD END */
 
 /* Footer */
