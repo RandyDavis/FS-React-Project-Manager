@@ -12,6 +12,10 @@ body {
 /*  Custom Spacing END */
 
 /* Custom Element Styles */
+.employee-title {
+    font-size: 1.25rem;
+}
+
 .btn-w-60 {
     width: 60px;
 }
