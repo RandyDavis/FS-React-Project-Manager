@@ -6,10 +6,17 @@ body {
     margin-bottom: 20px;
 }
 
-.d-none {
-    display: none;
+.mt-20 {
+    margin-top: 20px;
 }
 /*  Custom Spacing END */
+
+/* Custom Element Styles */
+.btn-w-60 {
+    width: 60px;
+}
+/* Custom Element Styles END */
+
 
 /* Custom Colors */
 .main-color-bg {
@@ -71,6 +78,13 @@ header h1 {
     background-color: #333;
 }
 /* SIDEBAR END */
+
+/* Main Content */
+h2 {
+    margin:0;
+    font-size: 1.5rem;
+}
+/* Main Content END */
 
 /* OVERVIEW CARD */
 .overview-card {
