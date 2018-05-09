@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project Manager | Project</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Start -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-yellow">
+        <div class="container">
+            <a class="navbar-brand" href="#">Project Front</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggle-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                        <span class="sr-only">(current)</span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="employees.html">Employees</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto navbar-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Welcome, Randy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Start -->
+
+    <!-- Header Start -->
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-md-10">
+                    <h1>
+                        <i class="fas fa-cog"></i> Project
+                        <small>- Shield Campaign</small>
+                    </h1>
+                </div>
+                <div class="col-xs-2 col-md-2">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary" type="button" id="backButton" href="projects.html">
+                            Back to Projects
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb -->
+    <section id="breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="projects"><a href="projects.html">Projects</a></li>
+                    <li class="breadcrumb-item active" aria-current="projects">Project</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <!-- Breadcrumb  END -->
+
+    <!-- Project Dashboard START -->
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Start -->
+                <div class="col-4  d-none d-sm-none d-md-block">
+                    <div class="list-group mb-20">
+                        <a href="/dashboard" class="list-group-item list-group-item-action active main-color-bg">
+                            <i class="fas fa-cog"></i> Dashboard
+                        </a>
+                        <a href="/projects" class="list-group-item list-group-item-action">
+                            <i class="fas fa-tasks"></i> My Projects
+                            <span class="badge badge-secondary">4</span>
+                        </a>
+                        <a href="/employees" class="list-group-item list-group-item-action">
+                            <i class="fas fa-users"></i> Employees
+                            <span class="badge badge-secondary">4</span>
+                        </a>
+                        <a href="/availability" class="list-group-item list-group-item-action">
+                            <i class="fas fa-chart-pie"></i> Availability
+                            <span class="badge badge-secondary">50%</span>
+                        </a>
+                    </div>
+                    <div class="card mb-20">
+                        <div class="card-body">
+                            <h4>Daily Task Completed</h4>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75"
+                                    aria-valuemin="0" aria-valuemax="100">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Total Project Completion %</h4>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                    aria-valuemin="0" aria-valuemax="100">25%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sidebar End -->
+
+                <!-- Dashboard Main Content -->
+                <div class="col">
+                    <!-- Employee Profile -->
+                    <div class="card mb-20">
+                        <div class="card-header main-color-bg">
+                            <h2>Project Profile</h2>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="card overview-card">
+                                        <div class="card-body">
+                                            <h3 class="employee-title"><strong>Project Name:</strong> Shield Campaign</h3>
+                                            <p class="card-title">
+                                                <strong>Project Number:</strong> PF-374-021
+                                            </p>
+                                            <p class="card-title">
+                                                <strong>Project Status:</strong> Current
+                                            </p>
+                                            <p class="card-text">
+                                                <strong>Active From:</strong> 04-12-2018
+                                            </p>
+                                            <p>
+                                                <strong>Delivery Date:</strong> 09-30-2018
+                                            </p>
+                                            <p>
+                                                <strong><i class="fas fa-users"></i> Employees Needed:</strong> 5
+                                            </p>
+                                            <p>
+                                                <strong><i class="fas fa-tasks"></i> Planned Tasks:</strong> 4
+                                            </p>
+                                            <p class="mb-0">
+                                                <strong><i class="fas fa-info-circle"></i> Project Description:</strong> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aliquid nam ipsa earum accusamus ducimus mollitia dolor non, molestias minima eius animi recusandae voluptatum nemo maxime atque ullam velit neque.
+                                            </p>
+                                        </div>
+                                        <div class="card-footer">
+                                            <button class="btn btn-secondary" type="button" id="editProjectButton" data-toggle="modal" data-target="#editProject">
+                                                Edit Project
+                                            </button>
+                                            <button class="btn btn-danger" type="button" id="deleteProfileButton" href="#">
+                                                Delete Project
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Employee Profile  END-->
+
+                    <!-- Project Task List -->
+                    <div class="card mb-20">
+                        <div class="card-header main-color-bg">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h2>Project Task List</h2>
+                                    </div>
+                                    <div class="col">
+                                        <button class="btn btn-secondary" type="button" id="newTaskButton" data-toggle="modal" data-target="#newTask">
+                                            Create New Task
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover table-sm">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Title</th>
+                                                <th scope="col">Assigned To</th>
+                                                <th scope="col">Status</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td><a href="task_id.html">Brainstorming Session</a></td>
+                                                <td>Jimmy Smith, Terry Tate, Milton</td>
+                                                <td>Not Started</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-sm btn-outline-dark btn-w-75 mtb-5" href="edit.html">Edit</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger btn-w-75 mtb-5" href="#">Delete</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td><a href="task_id.html">Pre-Prod Planning</a></td>
+                                                <td>Sarah McKay, Shannon Sharpe, Terry Tate </td>
+                                                <td>Not Started</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-sm btn-outline-dark btn-w-75 mtb-5" href="edit.html">Edit</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger btn-w-75 mtb-5" href="#">Delete</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td><a href="task_id.html">Development</a></td>
+                                                <td>Sarah McKay, Terry Tate</td>
+                                                <td>Not Started</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-sm btn-outline-dark btn-w-75 mtb-5" href="edit.html">Edit</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger btn-w-75 mtb-5" href="#">Delete</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4</th>
+                                                <td><a href="task_id.html">Development QA</a></td>
+                                                <td>Saray McKay, Terry Tate</td>
+                                                <td>Not Started</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-sm btn-outline-dark btn-w-75 mtb-5" href="edit.html">Edit</button>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger btn-w-75 mtb-5" href="#">Delete</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Task List END-->
+
+                    <!-- Active Projects -->
+                    <div class="card">
+                        <div class="card-header main-color-bg">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <h2>Assigned Employees</h2>
+                                    </div>
+                                    <div class="col">
+                                        <button class="btn btn-secondary btn-sm" type="button" id="assignToProjectButton" data-toggle="modal" data-target="#employeeList">
+                                            Assign Employee
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover table-sm">
+                                        <thead class="thead-dark">
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col">Name</th>
+                                                <th scope="col">Title</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td><a href="profile_id.html">Jimmy Smith</a></td>
+                                                <td>Account Manager</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger btn-w-75" href="#">Unassign</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td><a href="profile_id.html">Terry Tate</a></td>
+                                                <td>Project Manager</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger btn-w-75" href="#">Unassign</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td><a href="profile_id.html">Sarah McKay</a></td>
+                                                <td>Software Engineer</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger btn-w-75" href="#">Unassign</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">4</th>
+                                                <td><a href="profile_id.html">Shannon Sharpe</a></td>
+                                                <td>Frontend Developer</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger btn-w-75" href="#">Unassign</button>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">5</th>
+                                                <td><a href="profile_id.html">Milton</a></td>
+                                                <td>Content Strategist</td>
+                                                <td>
+                                                    <button type="button" class="btn btn-sm btn-outline-danger btn-w-75" href="#">Unassign</button>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Active Projects END -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>Copyright Project Front, &copy; 2018</p>
+    </footer>
+    <!-- Footer END -->
+
+    <!-- Modals -->
+
+    <!-- Edit Project -->
+    <div class="modal fade" id="editProject" tabindex="-1" role="dialog" aria-labelledby="add-to-project" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="add-project-modal">Edit Project</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="project-name">*Project Name</label>
+                                <input type="text" class="form-control" id="project-name" value="Shield Campaign">
+                            </div>
+                            <div class="form-group">
+                                <label for="project-number">* Project Number</label>
+                                <input type="text" class="form-control" id="project-number" value="PF-374-021">
+                            </div>
+                            <div class="form-group">
+                                <label for="project-status">* Status</label>
+                                <select class="form-control" id="project-status">
+                                    <option>select one</option>
+                                    <option>Planning</option>
+                                    <option>Active</option>
+                                    <option value="Current" selected>Current</option>
+                                    <option>Overdue</option>
+                                    <option>Completed</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="project-employees-needed">* Employees Needed</label>
+                                <select class="form-control" id="project-employees-needed">
+                                    <option>select one</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option value="5" selected>5</option>
+                                    <option>6</option>
+                                    <option>7</option>
+                                    <option>8</option>
+                                    <option>9</option>
+                                    <option>10</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="project-from-input">* From</label>
+                                <input type="date" class="form-control" id="project-from-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="project-delivery-input">* Delivery Date</label>
+                                <input type="date" class="form-control" id="project-delivery-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="project-description">* Project Description</label>
+                                <textarea class="form-control" id="project-description" rows="3" placeholder="Project Description or Notes">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium aliquid nam ipsa earum accusamus ducimus mollitia dolor non, molestias minima eius animi recusandae voluptatum nemo maxime atque ullam velit neque.</textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Update Project</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+    <!-- Edit Project END-->
+
+    <!-- New Task -->
+    <div class="modal fade" id="newTask" tabindex="-1" role="dialog" aria-labelledby="newTask" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="new-task-modal">New Task</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="task-title">* Task Title</label>
+                                <input type="text" class="form-control" id="task-title" placeholder="Enter task title">
+                            </div>
+                            <div class="form-group">
+                                <label for="task-assign">* Assigned To  (select multiple if needed)</label>
+                                <select multiple class="form-control" id="task-assign">
+                                    <option>Jimmy Smith</option>
+                                    <option>Terry Tate</option>
+                                    <option>Sarah McKay</option>
+                                    <option>Shannon Sharpe</option>
+                                    <option>Milton</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="project-status">* Status</label>
+                                <select class="form-control" id="project-status">
+                                    <option>select one</option>
+                                    <option>Planning</option>
+                                    <option>Active</option>
+                                    <option>Current</option>
+                                    <option>Overdue</option>
+                                    <option>Completed</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="task-description">* Task Description</label>
+                                <textarea class="form-control" id="task-description" rows="3" placeholder="Task Description or Notes"></textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Create Task</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+    </div>
+    <!-- New Task END-->
+
+    <!-- Employee List -->
+    <div class="modal fade" id="employeeList" tabindex="-1" role="dialog" aria-labelledby="add-to-project" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <form>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="add-to-project">Add Employee to Project</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="available-employees">Available Employees</label>
+                                <select class="form-control" id="available-employees">
+                                    <option>select one</option>
+                                    <option>John Doe</option>
+                                    <option>Vila DiMilo</option>
+                                    <option>Tony Stark</option>
+                                    <option>Ezra Miller</option>
+                                    <option>Natalie James</option>
+                                </select>
+                            </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Assign to Project</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Employee List END-->
+
+    <!-- Modals END -->
+
+    <!-- Project Dashboard END -->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
