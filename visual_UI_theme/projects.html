@@ -64,18 +64,6 @@
                         <small>- Manage Projects</small>
                     </h1>
                 </div>
-                <div class="col-xs-2 col-md-2">
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                            aria-expanded="false">
-                            Create Content
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" data-toggle="modal" data-target="#addProject" href="#">New Project</a>
-                            <a class="dropdown-item" data-toggle="modal" data-target="#addEmployee" href="#">New Employee</a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </header>
@@ -142,9 +130,9 @@
                 <!-- Projects Main Content -->
                 <div class="col">
                     <!-- Daily Work Overview -->
-                    <button type="button" class="btn btn-secondary btn-lg btn-block mb-20" data-toggle="modal" data-target="#addProject" href="#">
+                    <a class="btn btn-secondary btn-lg btn-block mb-20" href="add-project.html">
                             <i class="fas fa-plus"></i> Create New Project
-                    </button>
+                    </a>
 
                     <!-- Active Projects -->
                     <div class="card">
@@ -215,114 +203,6 @@
         <p>Copyright Project Front, &copy; 2018</p>
     </footer>
     <!-- Footer END -->
-
-    <!-- Modals -->
-    <!-- Add Project -->
-    <div class="modal fade" id="addProject" tabindex="-1" role="dialog" aria-labelledby="add-project-modal" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="add-project-modal">Add Project</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="project-name">*Project Name</label>
-                            <input type="text" class="form-control" id="project-name" placeholder="Enter Project Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="project-number">* Project Number</label>
-                            <input type="text" class="form-control" id="project-number" placeholder="Enter Project Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="project-status">* Status</label>
-                            <select class="form-control" id="project-status">
-                                <option>select one</option>
-                                <option>Planning</option>
-                                <option>Active</option>
-                                <option>Current</option>
-                                <option>Overdue</option>
-                                <option>Completed</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="project-from-input">* From</label>
-                            <input type="date" class="form-control" id="project-from-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="project-to-input">To</label>
-                            <input type="date" class="form-control" id="project-to-input">
-                        </div>
-                        <div class="form-group">
-                            <label for="project-description">Project Description</label>
-                            <textarea class="form-control" id="project-description" rows="3" placeholder="Project Description or Notes"></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Create Project</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Add Project END-->
-
-    <!-- Add Employee -->
-    <div class="modal fade" id="addEmployee" tabindex="-1" role="dialog" aria-labelledby="create-employee" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <form>
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="create-employee">Create New Employee</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <label for="employee-name">*Employee Name</label>
-                            <input type="text" class="form-control" id="employee-name" placeholder="Enter Employee Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="employee-skills">* Skills</label>
-                            <input type="text" class="form-control" id="employee-skills" placeholder="List Employee Skillset">
-                        </div>
-                        <div class="form-group">
-                            <label for="employee-title">* Title</label>
-                            <select class="form-control" id="employee-title">
-                                <option>select one</option>
-                                <option>Account Manager</option>
-                                <option>Backend Developer</option>
-                                <option>Frontend Developer</option>
-                                <option>Project Manager</option>
-                                <option>Team Manager</option>
-                                <option>Software Engineer</option>
-                                <option>UX/Content Stategist</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="employee-start-date">* Employment Start Date</label>
-                            <input type="date" class="form-control" id="employee-start-date" placeholder="Enter Employee Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="employee-description">Employee Description</label>
-                            <textarea class="form-control" id="employee-description" rows="3" placeholder="Employee Description or Notes"></textarea>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Create Employee</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <!-- Add Employee  END-->
-    <!-- Modals END -->
 
     <!-- Dashboard END -->
 
