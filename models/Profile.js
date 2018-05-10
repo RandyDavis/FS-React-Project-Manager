@@ -18,19 +18,26 @@ const ProfileSchema = new Schema({
             ref: 'projects'
         }
     ],
+    title: {
+        type: String,
+        required: true
+    },
     team: {
         type: String
     },
     location: {
         type: String
     },
-    status: {
-        type: String,
-        required: true
-    },
     skills: {
         type: [String],
         required: true
+    },
+    from: {
+        type: Date,
+        required: true
+    },
+    description: {
+        type: String
     },
     currentAvailability: {
         type: Number

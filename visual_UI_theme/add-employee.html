@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project Manager | Employees</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+        crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navigation Start -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-yellow">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Project Front</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="toggle-icon">
+                    <i class="fas fa-bars"></i>
+                </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="projects.html">Projects</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="employees.html">Employees</a>
+                        <span class="sr-only">(current)</span>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mr-auto navbar-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Welcome, Randy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navigation Start -->
+
+    <!-- Header Start -->
+    <header id="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-10 col-md-10">
+                    <h1>
+                        <i class="fas fa-cog"></i> Employees
+                        <small>- Manage Employees</small>
+                    </h1>
+                </div>
+                <div class="col-xs-2 col-md-2">
+                    <a class="btn btn-secondary mtop-5" id="backButton" href="employees.html">
+                        Back to Employees
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header End -->
+
+    <!-- Breadcrumb -->
+    <section id="breadcrumb">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                    <li class="breadcrumb-item" aria-current="projects"><a href="employees.html">Employees</a></li>
+                    <li class="breadcrumb-item active" aria-current="projects">Add Employee</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <!-- Breadcrumb END -->
+
+    <!-- Dashboard START -->
+    <section id="main">
+        <div class="container">
+            <div class="row">
+                <!-- Sidebar Start -->
+                <div class="col-4  d-none d-sm-none d-md-block">
+                    <div class="list-group mb-20">
+                        <a href="/dashboard" class="list-group-item list-group-item-action active main-color-bg">
+                            <i class="fas fa-cog"></i> Dashboard
+                        </a>
+                        <a href="/projects" class="list-group-item list-group-item-action">
+                            <i class="fas fa-tasks"></i> My Projects
+                            <span class="badge badge-secondary">4</span>
+                        </a>
+                        <a href="/employees" class="list-group-item list-group-item-action">
+                            <i class="fas fa-users"></i> Employees
+                            <span class="badge badge-secondary">4</span>
+                        </a>
+                        <a href="/availability" class="list-group-item list-group-item-action">
+                            <i class="fas fa-chart-pie"></i> Availability
+                            <span class="badge badge-secondary">50%</span>
+                        </a>
+                    </div>
+                    <div class="card mb-20">
+                        <div class="card-body">
+                            <h4>Daily Task Completed</h4>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 75%" aria-valuenow="75"
+                                    aria-valuemin="0" aria-valuemax="100">75%</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4>Total Project Completion %</h4>
+                            <div class="progress">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                    aria-valuemin="0" aria-valuemax="100">25%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Sidebar End -->
+
+                <!-- Add Employee Main Content -->
+                <div class="col">
+                    <!-- Add Employee Form -->
+                    <div class="card mb-20">
+                        <div class="card-header main-color-bg">
+                            <h2>Add New Employee</h2>
+                        </div>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <form>
+                                        <div class="form-group mtop-5">
+                                            <label for="employee-name">*Employee Name</label>
+                                            <input type="text" class="form-control" id="employee-name" placeholder="Enter Employee Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="employee-skills">* Skills</label>
+                                            <input type="text" class="form-control" id="employee-skills" placeholder="List Employee Skillset">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="employee-title">* Title</label>
+                                            <select class="form-control" id="employee-title">
+                                                <option>select one</option>
+                                                <option>Account Manager</option>
+                                                <option>Backend Developer</option>
+                                                <option>Frontend Developer</option>
+                                                <option>Project Manager</option>
+                                                <option>Team Manager</option>
+                                                <option>Software Engineer</option>
+                                                <option>Deployment/Build Engineer</option>
+                                                <option>UX/Content Stategist</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="employee-title">Team</label>
+                                            <select class="form-control" id="employee-title">
+                                                <option>select one</option>
+                                                <option>Management</option>
+                                                <option>Backend Developers</option>
+                                                <option>Frontend Developers</option>
+                                                <option>Art/Graphic Designers</option>
+                                                <option>Quality Assurance</option>
+                                                <option>DevOps</option>
+                                                <option>UX/Content Stategy</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="employee-start-date">* Employment Start Date</label>
+                                            <input type="date" class="form-control" id="employee-start-date" placeholder="Enter Employee Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="employee-description">Employee Description</label>
+                                            <textarea class="form-control" id="employee-description" rows="3" placeholder="Employee Description or Notes"></textarea>
+                                        </div>
+                                        <button type="submit" class="btn btn-dark btn-block mb-20">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add Employee Form END-->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <p>Copyright Project Front, &copy; 2018</p>
+    </footer>
+    <!-- Footer END -->
+
+    <!-- Dashboard END -->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
