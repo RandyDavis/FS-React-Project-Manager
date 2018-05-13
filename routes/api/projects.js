@@ -54,30 +54,6 @@ router.post('/new', passport.authenticate('jwt', { session: false }), (req, res)
         }
     })
 
-    // Project.findOne({ id: _id })
-    //     .then(project => {
-    //         // if (project) {
-    //         //     // Update
-    //         //     Project.findOneAndUpdate(
-    //         //         { user: req.user.id },
-    //         //         { $set: projectFields },
-    //         //         { new: true }
-    //         //     ).then(project => res.json(project));
-    //         // } else {
-    //             // // Check if project exists
-    //             // Project.findOne({ id: projectFields.id }).then(project => {
-    //             //     if (project) {
-    //             //         errors.id = 'Project already exists';
-    //             //         res.status(400).json(errors);
-    //             //     }
-
-    //             //     // Save Project
-    //             //     new Project(projectFields).save()
-    //             //         .then(project => res.json(project));
-    //             // })
-    //         // }
-    //     })
-
 })
 
 // @route   PATCH api/projects/:_id
@@ -108,11 +84,10 @@ router.patch('/:_id', passport.authenticate('jwt', { session: false }), (req, re
             throw err;
         }
         res.json(projects)
-    })
+    });
+});
 
-})
-
-// @route   GET api/projects
+// @route   GET api/projects/all
 // @desc    GET projects
 // @access  Private
 router.get('/all', passport.authenticate('jwt', { session: false }), (req, res) => {
@@ -127,6 +102,24 @@ router.get('/all', passport.authenticate('jwt', { session: false }), (req, res) 
             res.json(projects)
         })
         .catch(err => res.status(404).json({ noProjectsFound: 'No Projects Found' }));
-})
+});
+
+// @route   DELETE api/projects/:_id
+// @desc    Delete a project
+// @access  Private
+router.delete('/:_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+    const query = { _id: req.params._id };
+
+    Project.findOneAndRemove(query)
+        .then(() => res.json({ success: true }));
+
+    // Alternative way to delete from the db
+    // Project.remove(query, (err, projects) => {
+    //     if (err) {
+    //         throw err;
+    //     }
+    //     res.json(projects);
+    // })
+});
 
 module.exports = router;
