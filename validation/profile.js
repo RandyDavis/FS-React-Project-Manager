@@ -6,8 +6,9 @@ module.exports = function validateProfileInput(data) {
 
     // Make sure that data.property is an empty STRING if one is not entered
     data.handle = !isEmpty(data.handle) ? data.handle : '';
-    data.status = !isEmpty(data.status) ? data.status : '';
+    data.title = !isEmpty(data.title) ? data.title : '';
     data.skills = !isEmpty(data.skills) ? data.skills : '';
+    // data.from = !isEmpty(data.from) ? data.from : '';
 
 
     // Validation scenarios to check against for the Profile
@@ -19,13 +20,17 @@ module.exports = function validateProfileInput(data) {
         errors.handle = 'Profile handle is required';
     }
 
-    if (validator.isEmpty(data.status)) {
-        errors.status = 'Status field is required';
+    if (validator.isEmpty(data.title)) {
+        errors.title = 'Title field is required';
     }
 
     if (validator.isEmpty(data.skills)) {
         errors.skills = 'Skills field is required';
     }
+
+    // if (validator.isEmpty(data.from)) {
+    //     errors.from = 'From field is required';
+    // }
 
     return {
         errors,

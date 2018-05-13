@@ -108,10 +108,12 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     const profileFields = {};
     profileFields.user = req.user.id;
     if (req.body.handle) profileFields.handle = req.body.handle;
+    if (req.body.title) profileFields.title = req.body.title;
     if (req.body.projects) profileFields.projects = req.body.projects;
     if (req.body.team) profileFields.team = req.body.team;
     if (req.body.location) profileFields.location = req.body.location;
-    if (req.body.status) profileFields.status = req.body.status;
+    if (req.body.from) profileFields.from = req.body.from;
+    if (req.body.description) profileFields.description = req.body.description;
     if (req.body.currentAvailability) profileFields.currentAvailability = req.body.currentAvailability;
     // Skills - split into an array
     if (typeof req.body.skills !== 'undefined') {
@@ -143,6 +145,18 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
             }
         })
         .catch(err => res.status(404).json(err));
+});
+
+// @route   DELETE api/profile/:_id
+// @desc    Delete user and profile
+// @access  Private
+router.delete('/:_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+    const query = { user: req.user.id };
+    Profile.findOneAndRemove(query)
+        .then(() => {
+            User.findOneAndRemove({ _id: req.user.id })
+                .then(() => res.json({ success: true }))
+        });
 });
 
 module.exports = router;
