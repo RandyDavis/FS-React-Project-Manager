@@ -3,11 +3,15 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const ProjectSchema = new Schema({
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: 'users'
+    },
     team: [
         {
             profile: {
                 type: Schema.Types.ObjectId,
-                ref: 'profile'
+                ref: 'profiles'
             }
         }
     ],
@@ -16,7 +20,7 @@ const ProjectSchema = new Schema({
         required: true
     },
     number: {
-        type: Number,
+        type: String,
         required: true
     },
     status: {
@@ -30,7 +34,7 @@ const ProjectSchema = new Schema({
         type: Date
     },
     description: {
-        type: string
+        type: String
     },
     date: {
         type: Date,
