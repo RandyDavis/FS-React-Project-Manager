@@ -56,10 +56,10 @@ router.post('/new', passport.authenticate('jwt', { session: false }), (req, res)
 
 })
 
-// @route   PATCH api/projects/:_id
+// @route   PUT api/projects/:_id
 // @desc    Edit or Update a project
 // @access  Private
-router.patch('/:_id', passport.authenticate('jwt', { session: false }), (req, res) => {
+router.put('/:_id', passport.authenticate('jwt', { session: false }), (req, res) => {
     // Get fields
     const project = req.body;
     const query = { _id: req.params._id };
