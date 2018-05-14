@@ -1,28 +1,169 @@
-.App {
+body {
+  background: #f4f4f4;
+}
+/****** Custom Spacing ******/
+.mtb-5 {
+  margin: 5px 0;
+}
+.mb-0 {
+  margin-bottom: 0;
+}
+
+.mtop-5 {
+  margin-top: 5px;
+}
+
+.mb-5 {
+  margin-bottom: 5px !important;
+}
+
+.mb-20 {
+  margin-bottom: 20px;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+/****** Custom Spacing END ******/
+
+/****** Custom Element Styles ******/
+.employee-title {
+  font-size: 1.25rem;
+}
+
+.btn-w-60 {
+  width: 60px;
+}
+
+.btn-w-75 {
+  width: 75px;
+}
+/****** Custom Element Styles END ******/
+
+
+/****** Custom Colors ******/
+.main-color-bg {
+  background-color: #ffe8a3 !important;
+  color: #333 !important;
+  border: 1px solid rgb(0,0,0,.125) !important;
+}
+/****** Custom Colors End ******/
+
+/****** NAVBAR ******/
+.navbar {
+  min-height: 33px !important;
+  margin-bottom: 0;
+  padding: 0 1rem;
+}
+
+.navbar-nav > li > a, .navbar-brand{
+  padding-top: 6px !important;
+  padding-bottom: 0 !important;
+  height: 33px;
+  color: #333 !important;
+}
+
+.nav-item.active {
+  background-color: rgba(0, 0, 0, 0.164) !important;
+}
+
+.navbar.bg-yellow {
+  background-color: #ffc00e;
+}
+
+button.navbar-toggler {
+  color: #404448 !important;
+  border: 1px solid #404448 !important;
+}
+/****** NAVBAR END ******/
+
+/****** HEADER ******/
+header {
+  /* margin-top: 33px;  */ /* Uncomment if adding .fixed-top to nav element */
+  background: #333;
+  color: #fff;
+  padding: 10px 0;
+  margin-bottom: 15px;
+}
+
+header h1 {
+  margin-bottom: 0;
+}
+
+#dropdownMenuButton {
+  margin-top: 5px;
+}
+/****** HEADER END ******/
+
+/****** LANDING ******/
+.landing {
+  position: relative;
+  background: url('./img/landing-bg.jpg') no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  height: 100vh;
+  margin-bottom: -30px;
+  padding-top: 80px;
+}
+
+.landing h1 {
+  font-size: 4.5rem;
+}
+
+.landing a {
+  margin: 0 5px;
+}
+/****** LANDING END ******/
+
+/****** SIDEBAR *******/
+/* Progess Bar */
+.progress-bar {
+  background-color: #333;
+}
+/****** SIDEBAR END *******/
+
+/****** Main Content ******/
+h2 {
+  margin:0;
+  font-size: 1.5rem;
+}
+/****** Main Content END ******/
+
+/****** OVERVIEW CARD ******/
+.overview-card {
+  background-color: #f4f4f4;
+  border-radius: .25rem;
+  border: 1px solid rgba(0,0,0,.125);
+  margin: 15px 0;
+}
+
+.overview-card a img {
+  width: 100%
+}
+/****** OVERVIEW CARD END ******/
+
+/****** Footer ******/
+#footer {
+  background-color: #333;
+  color: #fff;
   text-align: center;
+  padding: 30px;
+  margin-top: 30px;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+#footer p {
+  margin: 0;
+}
+/****** Footer END ******/
+
+
+@media (max-width: 767px) {
+  .nav-item {
+      padding-left: 10px;
+  }
+
+  .landing h1 {
+      font-size: 2.5rem;
+  }
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
