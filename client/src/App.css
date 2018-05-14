@@ -58,8 +58,8 @@ body {
 
 .navbar-nav > li > a, .navbar-brand{
   padding-top: 6px !important;
-  padding-bottom: 0 !important;
-  height: 33px;
+  /* padding-bottom: 0 !important;
+  height: 33px; */
   color: #333 !important;
 }
 
