@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-md navbar-dark bg-yellow">
                 <div className="container">
-                    <a className="navbar-brand" href="#">Project Front</a>
+                    <Link className="navbar-brand" to="/">Project Front</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarsExampleDefault"
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span className="toggle-icon">
@@ -16,7 +17,7 @@ class Navbar extends Component {
                         <div className="collapse navbar-collapse" id="navbarsDefaultShow">
                             <ul className="navbar-nav mr-auto">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="employees-all.html">Employees</a>
+                                    <Link className="nav-link" to="/employees">Employees</Link>
                                 </li>
                             </ul>
                         </div>
@@ -25,10 +26,10 @@ class Navbar extends Component {
                         <div className="collapse navbar-collapse" id="navbarsAccessShow">
                             <ul className="navbar-nav mr-auto navbar-right">
                                 <li className="nav-item">
-                                    <a className="nav-link" href="register.html">Sign Up</a>
+                                    <Link className="nav-link" to="/register">Sign Up</Link>
                                 </li>
                                 <li className="nav-item">
-                                    <a className="nav-link" href="login.html">Login</a>
+                                    <Link className="nav-link" to="/login">Login</Link>
                                 </li>
                             </ul>
                         </div>
