@@ -30,7 +30,7 @@ class Landing extends Component {
     }
 }
 
-Landing.PropTypes = {
+Landing.propTypes = {
     auth: PropTypes.object.isRequired
 };
 

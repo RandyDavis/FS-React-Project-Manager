@@ -48,8 +48,8 @@ class App extends Component {
             <Route exact path='/' component={ Landing } />
             <Route exact path='/register' component={ Register } />
             <Route exact path='/login' component={ Login } />
+            <Route exact path='/dashboard' component={Dashboard} />
             <div className="container">
-              <Route exact path='/dashboard' component={Dashboard} />
             </div>
             <Footer />
           </div>

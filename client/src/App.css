@@ -24,6 +24,10 @@ body {
 .mt-20 {
   margin-top: 20px;
 }
+
+.mtb-50 {
+  margin: 50px 0;
+}
 /****** Custom Spacing END ******/
 
 /****** Custom Element Styles ******/
