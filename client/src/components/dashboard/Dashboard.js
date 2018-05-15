@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile } from '../../actions/profileActions';
-import Spinner from '../../common/Spinner';
+import Spinner from '../../components/common/Spinner';
 
 class Dashboard extends Component {
     componentDidMount() {
@@ -50,10 +50,10 @@ class Dashboard extends Component {
                             </div>
                         </header>
                         <section id="breadcrumb">
-                            <div class="container">
+                            <div className="container">
                                 <nav aria-label="breadcrumb">
-                                    <ol class="breadcrumb">
-                                        <li class="breadcrumb-item active" aria-current="dashboard">Dashboard</li>
+                                    <ol className="breadcrumb">
+                                        <li className="breadcrumb-item active" aria-current="page">Dashboard</li>
                                     </ol>
                                 </nav>
                             </div>
