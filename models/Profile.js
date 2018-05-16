@@ -36,7 +36,7 @@ const ProfileSchema = new Schema({
         type: Date,
         required: true
     },
-    description: {
+    bio: {
         type: String
     },
     currentAvailability: {
