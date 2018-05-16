@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
+import SelectListGroup from '../common/SelectListGroup';
+import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 
 class CreateProfile extends Component {
     constructor(props) {
