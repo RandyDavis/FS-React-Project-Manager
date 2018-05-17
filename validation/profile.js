@@ -8,7 +8,7 @@ module.exports = function validateProfileInput(data) {
     data.handle = !isEmpty(data.handle) ? data.handle : '';
     data.title = !isEmpty(data.title) ? data.title : '';
     data.skills = !isEmpty(data.skills) ? data.skills : '';
-    // data.from = !isEmpty(data.from) ? data.from : '';
+    data.from = !isEmpty(data.from) ? data.from : '';
 
 
     // Validation scenarios to check against for the Profile
@@ -28,9 +28,9 @@ module.exports = function validateProfileInput(data) {
         errors.skills = 'Skills field is required';
     }
 
-    // if (validator.isEmpty(data.from)) {
-    //     errors.from = 'From field is required';
-    // }
+    if (validator.isEmpty(data.from)) {
+        errors.from = 'Start date field is required';
+    }
 
     return {
         errors,

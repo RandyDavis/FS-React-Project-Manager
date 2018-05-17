@@ -113,7 +113,7 @@ router.post('/', passport.authenticate('jwt', { session: false }), (req, res) =>
     if (req.body.team) profileFields.team = req.body.team;
     if (req.body.location) profileFields.location = req.body.location;
     if (req.body.from) profileFields.from = req.body.from;
-    if (req.body.description) profileFields.description = req.body.description;
+    if (req.body.bio) profileFields.bio = req.body.bio;
     if (req.body.currentAvailability) profileFields.currentAvailability = req.body.currentAvailability;
     // Skills - split into an array
     if (typeof req.body.skills !== 'undefined') {

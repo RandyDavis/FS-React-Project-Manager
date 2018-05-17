@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import TextFieldGroup from '../common/TextFieldGroup';
 import SelectListGroup from '../common/SelectListGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
+import { createProfile } from '../../actions/profileActions';
 
 class CreateProfile extends Component {
     constructor(props) {
@@ -27,9 +28,25 @@ class CreateProfile extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.errors) {
+            this.setState({ errors: nextProps.errors })
+        }
+    }
+
     onSubmit(e) {
         e.preventDefault();
-        console.log('submitted');
+        const profileData = {
+            handle: this.state.handle,
+            title: this.state.title,
+            team: this.state.team,
+            from: this.state.from,
+            skills: this.state.skills,
+            location: this.state.location,
+            bio: this.state.bio,
+        }
+
+        this.props.createProfile(profileData, this.props.history);
     }
 
     onChange(e) {
@@ -155,10 +172,10 @@ class CreateProfile extends Component {
                                         />
                                         <TextFieldGroup
                                             placeholder="Location - City, State"
-                                            name="handle"
-                                            value={this.state.handle}
+                                            name="location"
+                                            value={this.state.location}
                                             onChange={this.onChange}
-                                            error={errors.handle}
+                                            error={errors.location}
                                             info="Provide city and state of working location"
                                         />
                                         <TextAreaFieldGroup
@@ -191,4 +208,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 })
 
-export default connect(mapStateToProps, {})(CreateProfile);
+export default connect(mapStateToProps, { createProfile })(withRouter(CreateProfile));
