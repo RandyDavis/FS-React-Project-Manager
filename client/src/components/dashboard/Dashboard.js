@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getCurrentProfile, deleteAccount } from '../../actions/profileActions';
 import Spinner from '../../components/common/Spinner';
 import Sidebar from '../common/Sidebar';
+import CreateProject from '../create-project/CreateProject';
 
 class Dashboard extends Component {
     componentDidMount() {
@@ -43,7 +44,7 @@ class Dashboard extends Component {
                                                 Create New
                                             </button>
                                             <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <Link className="dropdown-item" to="/create-project">New Project</Link>
+                                                <Link className="dropdown-item" to="/projects/create-project">New Project</Link>
                                                 <Link className="dropdown-item" to="/create-employee">New Employee</Link>
                                             </div>
                                         </div>
