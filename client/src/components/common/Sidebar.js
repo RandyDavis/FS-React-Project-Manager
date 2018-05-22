@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const Sidebar = ({ projects, team, availability }) => (
     <div className="Sidebar col-4  d-none d-sm-none d-md-block">

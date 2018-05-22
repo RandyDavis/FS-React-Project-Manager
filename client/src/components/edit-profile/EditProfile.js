@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import moment from 'moment';
 import TextFieldGroup from '../common/TextFieldGroup';
 import SelectListGroup from '../common/SelectListGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
-import { createProfile } from '../../actions/profileActions';
+import { createProfile, getCurrentProfile } from '../../actions/profileActions';
+import isEmpty from '../../validation/is-empty';
+
+
+// Moment.globalFormat = 'YYYY-MM-DD';
 
 class CreateProfile extends Component {
     constructor(props) {
@@ -28,9 +33,40 @@ class CreateProfile extends Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
+    componentDidMount() {
+        this.props.getCurrentProfile();
+    }
+
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
             this.setState({ errors: nextProps.errors })
+        }
+
+        if (nextProps.profile.profile) {
+            const profile = nextProps.profile.profile;
+
+            // Bring Skills array back to CSV
+            const skillsCSV = profile.skills.join(",");
+
+            // If profile doesn't exist, make empty string
+            profile.handle = !isEmpty(profile.handle) ? profile.handle : '';
+            profile.title = !isEmpty(profile.title) ? profile.title : '';
+            profile.team = !isEmpty(profile.team) ? profile.team : '';
+            profile.from = !isEmpty(profile.from) ? profile.from : '';
+            // profile.skills = !isEmpty(profile.skills) ? profile.skills : '';
+            profile.location = !isEmpty(profile.location) ? profile.location : '';
+            profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
+
+            // Set component fields state
+            this.setState({
+                handle: profile.handle,
+                title: profile.title,
+                team: profile.team,
+                from: moment(profile.from).format('YYYY-MM-DD'),
+                skills: skillsCSV,
+                location: profile.location,
+                bio: profile.bio
+            })
         }
     }
 
@@ -88,7 +124,7 @@ class CreateProfile extends Component {
 
         return (
             <div>
-                <header className="Header">
+                <header id="header">
                     <div className="container">
                         <div className="row">
                             <div className="col-xs-10 col-md-10">
@@ -109,8 +145,9 @@ class CreateProfile extends Component {
                     <div className="container">
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb">
-                                <li className="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-                                <li className="breadcrumb-item active" aria-current="page">Profile</li>
+                                <li className="breadcrumb-item"><Link to={"/dashboard"}>Dashboard</Link></li>
+                                <li className="breadcrumb-item"><Link to={"/profile"}>Profile</Link></li>
+                                <li className="breadcrumb-item active" aria-current="page">Edit Profile</li>
                             </ol>
                         </nav>
                     </div>
@@ -118,14 +155,11 @@ class CreateProfile extends Component {
                 <div className=" container">
                     <div className="card mb-20">
                         <div className="card-header main-color-bg">
-                            <h2>Create Your Profile</h2>
+                            <h2>Edit Profile</h2>
                         </div>
                         <div className="container">
                             <div className="row">
                                 <div className="col">
-                                    <p className="lead mtb-5">
-                                        Let's add some information so others will know more about you.
-                                    </p>
                                     <small className="mb-5">* = required fields</small>
                                     <form onSubmit={this.onSubmit}>
                                         <TextFieldGroup
@@ -199,6 +233,8 @@ class CreateProfile extends Component {
 }
 
 CreateProfile.propTypes = {
+    createProfile: PropTypes.func.isRequired,
+    getCurrentProfile: PropTypes.func.isRequired,
     profile: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
 }
@@ -208,4 +244,4 @@ const mapStateToProps = state => ({
     errors: state.errors
 })
 
-export default connect(mapStateToProps, { createProfile })(withRouter(CreateProfile));
+export default connect(mapStateToProps, { createProfile, getCurrentProfile })(withRouter(CreateProfile));

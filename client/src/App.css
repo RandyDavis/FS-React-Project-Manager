@@ -42,6 +42,33 @@ body {
 .btn-w-75 {
   width: 75px;
 }
+
+.ProfileItem i.fas {
+  width: 25px;
+  text-align: center;
+}
+
+.Profiles-Private .ProfileItem .card-body h3 {
+  font-size: 1.5rem;
+}
+.Profiles-Private .ProfileItem .card-body .card-title {
+  font-size: 1.15rem;
+}
+
+.Profiles-Private .ProfileItem .card-body {
+  min-height: 400px;
+}
+
+.Profiles-Public .ProfileItem .card-body {
+  min-height: 290px;
+}
+
+.Profiles-Private .ProfileItem .card-footer,
+.Profiles-Public .ProfileItem .card-footer {
+  text-align: center;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
 /****** Custom Element Styles END ******/
 
 
@@ -161,13 +188,31 @@ h2 {
 /****** Footer END ******/
 
 
-@media (max-width: 767px) {
+@media screen and (min-width: 569px) and (max-width: 767px) {
   .nav-item {
       padding-left: 10px;
   }
 
   .landing h1 {
       font-size: 2.5rem;
+  }
+
+  .Profiles-Private .ProfileItem .card-body,
+  .Profiles-Public .ProfileItem .card-body {
+    min-height: 335px;
+  }
+
+  .Profiles-Private .ProfileItem .card-footer,
+  .Profiles-Public .ProfileItem .card-footer {
+    padding-left: .75rem;
+    padding-right: .25rem;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 568px) {
+  .Profiles-Private .ProfileItem .card-body,
+  .Profiles-Public .ProfileItem .card-body {
+    min-height: 250px;
   }
 }
 

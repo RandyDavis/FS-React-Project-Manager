@@ -17,6 +17,9 @@ class Navbar extends Component {
         const authLinks = (
             <ul className="navbar-nav mr-auto navbar-right">
                 <li className="nav-item">
+                    <Link className="nav-link" to="/dashboard">Dashboard</Link>
+                </li>
+                <li className="nav-item">
                     <a
                         href=""
                         onClick={this.onLogoutClick.bind(this)}
@@ -55,16 +58,21 @@ class Navbar extends Component {
                             <i className="fas fa-bars"></i>
                         </span>
                     </button>
-                    <div className="col-9">
+                    <div className="col-md-8">
                         <div className="collapse navbar-collapse" id="navbarsDefaultShow">
                             <ul className="navbar-nav mr-auto">
                                 <li className="nav-item">
-                                    <Link className="nav-link" to="/employees">Employees</Link>
+                                { isAuthenticated
+                                  ?
+                                  <Link className="nav-link" to="/employees">Employees</Link>
+                                  :
+                                  <Link className="nav-link" to="/employees-public">Employees</Link>
+                                }
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div className="col-md-3">
+                    <div className="col-md-4">
                         <div className="collapse navbar-collapse" id="navbarsAccessShow">
                             { isAuthenticated ? authLinks : guestLinks }
                         </div>

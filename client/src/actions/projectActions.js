@@ -4,12 +4,8 @@ import {
     CREATE_PROJECT,
     GET_PROJECT,
     GET_PROJECTS,
-    PROJECT_LOADING,
-    SET_CURRENT_USER
+    PROJECT_LOADING
 } from './types';
-
-// Get Current Project
-
 
 
 // Create Project
@@ -29,9 +25,31 @@ export const createProject = (projectData, history) => dispatch => {
         )
 }
 
+// Get Projects
+export const getProjects = () => dispatch => {
+    dispatch(projectsLoading());
+    axios.get('/api/projects/all')
+        .then(res =>
+            dispatch({
+                type: GET_PROJECTS,
+                payload: res.data
+            })
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_PROJECTS,
+                payload: null
+            })
+        )
+};
 
-// Project Loading
 
+// Project or Projects Loading
+export const projectsLoading = () => {
+    return {
+        type: PROJECT_LOADING
+    };
+};
 
 
 // Delete Project

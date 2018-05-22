@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import HeaderBackButton from '../common/HeaderBackButton';
 import TextFieldGroup from '../common/TextFieldGroup';
 import SelectListGroup from '../common/SelectListGroup';
 import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
@@ -73,23 +74,7 @@ class CreateProject extends Component {
 
         return (
             <div>
-                <header id="header">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-xs-10 col-md-10">
-                                <h1>
-                                    <i className="fas fa-cog"></i> Projects
-                                    <small> - Create Project</small>
-                                </h1>
-                            </div>
-                            <div className="col-xs-2 col-md-2">
-                                <Link className="btn btn-secondary mtop-5" id="backButton" to='/dashboard'>
-                                    Back to Dashboard
-                                </Link>
-                            </div>
-                        </div>
-                    </div>
-                </header>
+                <HeaderBackButton heading="Projects" subheading=" Create Project" />
                 <section id="breadcrumb">
                     <div className="container">
                         <nav aria-label="breadcrumb">
@@ -176,7 +161,7 @@ class CreateProject extends Component {
 }
 
 CreateProject.propTypes = {
-    project: PropTypes.object,
+    createProject: PropTypes.func.isRequired,
     errors: PropTypes.object.isRequired
 }
 

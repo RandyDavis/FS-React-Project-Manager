@@ -1,17 +1,17 @@
 import {
     CREATE_PROJECT,
-    GET_PROJECT,
     GET_PROJECTS,
+    GET_PROJECT,
     PROJECT_LOADING
 } from '../actions/types';
 
 const initialState = {
-    project: null,
     projects: [],
+    project: null,
     loading: false
 }
 
-export default function(state= initialState, action) {
+export default function(state = initialState, action) {
     switch (action.type) {
         case PROJECT_LOADING:
             return {

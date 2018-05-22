@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { getCurrentProfile, deleteAccount } from '../../actions/profileActions';
+// import { getProjects } from '../../actions/projectActions';
 import Spinner from '../../components/common/Spinner';
 import Sidebar from '../common/Sidebar';
-import CreateProject from '../create-project/CreateProject';
+import HeaderDropdown from '../common/HeaderDropdown';
 
 class Dashboard extends Component {
     componentDidMount() {
         this.props.getCurrentProfile();
+        // this.props.getProjects();
     }
 
     onDeleteClick(e) {
@@ -28,30 +30,7 @@ class Dashboard extends Component {
             if (Object.keys(profile).length > 0) {
                 dashBoardContent = (
                     <div>
-                        <header id="header">
-                            <div className="container">
-                                <div className="row">
-                                    <div className="col-xs-10 col-md-10">
-                                        <h1>
-                                            <i className="fas fa-cog"></i> Dashboard
-                                            <small> - Manage Workflow</small>
-                                        </h1>
-                                    </div>
-                                    <div className="col-xs-2 col-md-2">
-                                        <div className="dropdown">
-                                            <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Create New
-                                            </button>
-                                            <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                                <Link className="dropdown-item" to="/projects/create-project">New Project</Link>
-                                                <Link className="dropdown-item" to="/create-employee">New Employee</Link>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </header>
+                        <HeaderDropdown heading="Dashboard" subheading=" Manage Workflow" />
                         <p className="container lead text-muted">
                             Welcome <Link to={`/profile/${profile.handle}`}>{ profile.user.name }!</Link>
                         </p>
@@ -59,7 +38,7 @@ class Dashboard extends Component {
                             <div className="container">
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb">
-                                    <li className="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                        <li className="breadcrumb-item active" aria-current="page">Dashboard</li>
                                     </ol>
                                 </nav>
                             </div>
