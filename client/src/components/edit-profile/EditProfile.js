@@ -9,9 +9,6 @@ import TextAreaFieldGroup from '../common/TextAreaFieldGroup';
 import { createProfile, getCurrentProfile } from '../../actions/profileActions';
 import isEmpty from '../../validation/is-empty';
 
-
-// Moment.globalFormat = 'YYYY-MM-DD';
-
 class CreateProfile extends Component {
     constructor(props) {
         super(props);

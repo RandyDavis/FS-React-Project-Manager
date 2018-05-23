@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Spinner from '../common/Spinner';
-import HeaderBackButton from '../common/HeaderBackButton';
+import Header from '../common/Header';
+import '../../actions/authActions';
 import { getProfiles } from '../../actions/profileActions';
 import ProfileItem from './ProfileItem';
 
@@ -13,6 +14,7 @@ class Profiles extends Component {
     }
 
     render() {
+        const { isAuthenticated, user } = this.props.auth;
         const { profiles, loading } = this.props.profile;
         let profileItems;
 
@@ -38,13 +40,12 @@ class Profiles extends Component {
 
         return (
             <div className="Profiles-Public">
-                <HeaderBackButton heading="Employees" subheading="Current" />
+                <Header heading="Employees" subheading="Current" />
                 <section id="breadcrumb">
                     <div className="container">
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb">
-                                <li className="breadcrumb-item"><Link to="/dashboard">Dashboard</Link></li>
-                                <li className="breadcrumb-item active" aria-current="page">Employees - Public</li>
+                                <li className="breadcrumb-item active" aria-current="page">Employees</li>
                             </ol>
                         </nav>
                     </div>
@@ -68,11 +69,13 @@ class Profiles extends Component {
 
 Profiles.propTypes = {
     getProfiles: PropTypes.func.isRequired,
-    profile: PropTypes.object.isRequired
+    profile: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-    profile: state.profile
+    profile: state.profile,
+    auth: state.auth
 })
 
 export default connect(mapStateToProps, { getProfiles })(Profiles);

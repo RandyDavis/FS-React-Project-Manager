@@ -43,7 +43,7 @@ body {
   width: 75px;
 }
 
-.ProfileItem i.fas {
+.ProfileItem i.fas, .Profile i.fas {
   width: 25px;
   text-align: center;
 }
@@ -168,7 +168,7 @@ h2 {
   margin: 15px 0;
 }
 
-.overview-card a img {
+.overview-card img {
   width: 100%
 }
 /****** OVERVIEW CARD END ******/

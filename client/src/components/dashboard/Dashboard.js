@@ -32,7 +32,7 @@ class Dashboard extends Component {
                     <div>
                         <HeaderDropdown heading="Dashboard" subheading=" Manage Workflow" />
                         <p className="container lead text-muted">
-                            Welcome <Link to={`/profile/${profile.handle}`}>{ profile.user.name }!</Link>
+                            Welcome <Link to={`/employees/profile/${profile.handle}`}>{ profile.user.name }!</Link>
                         </p>
                         <section id="breadcrumb">
                             <div className="container">

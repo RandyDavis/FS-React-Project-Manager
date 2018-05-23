@@ -55,6 +55,9 @@ class Profiles extends Component {
                         <div className="row">
                             <Sidebar />
                             <div className="col">
+                                <Link className="btn btn-secondary btn-lg btn-block mb-20" to="/create-employee">
+                                    <i className="fas fa-plus"></i> Create New Employee
+                                </Link>
                                 <div className="card mb-20">
                                     <div className="card-header main-color-bg">
                                         <h2>Employee Roster</h2>

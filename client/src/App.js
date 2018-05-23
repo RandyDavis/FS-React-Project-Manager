@@ -19,6 +19,8 @@ import Dashboard from './components/dashboard/Dashboard';
 // import Projects from './components/projects/Projects';
 import CreateProfile from './components/create-profile/CreateProfile';
 import EditProfile from './components/edit-profile/EditProfile';
+import ProfilePublic from './components/profile/ProfilePublic';
+import Profile from './components/profile/Profile';
 import CreateProject from './components/create-project/CreateProject';
 import Employees from './components/profiles/Profiles';
 import EmployeesPublic from './components/profiles/ProfilesPublic';
@@ -57,6 +59,7 @@ class App extends Component {
             <Route exact path='/register' component={ Register } />
             <Route exact path='/login' component={ Login } />
             <Route exact path='/employees-public' component={ EmployeesPublic } />
+            <Route exact path='/employees-public/profile/:handle' component={ ProfilePublic } />
             <Switch>
               <PrivateRoute exact path='/dashboard' component={Dashboard} />
             </Switch>
@@ -64,7 +67,10 @@ class App extends Component {
               <PrivateRoute exact path='/create-profile' component={CreateProfile} />
             </Switch>
             <Switch>
-              <PrivateRoute exact path='/profile/edit-profile' component={EditProfile} />
+              <PrivateRoute exact path='/employees/profile/edit-profile' component={EditProfile} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path='/employees/profile/:handle' component={Profile} />
             </Switch>
             <Switch>
               <PrivateRoute exact path='/employees' component={Employees} />
