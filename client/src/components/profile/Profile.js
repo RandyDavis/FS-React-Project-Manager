@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 import Moment from 'react-moment';
 import Spinner from '../common/Spinner';
 import HeaderDropdown from '../common/HeaderDropdown';
@@ -18,7 +19,10 @@ class Profile extends Component {
 
     render() {
         const { profile, loading } = this.props.profile;
+        const { user } = this.props.auth;
         let profileContent;
+        // console.log(user);
+        // console.log(profile);
 
         if (profile === null || loading) {
             profileContent = (
@@ -33,6 +37,23 @@ class Profile extends Component {
         } else {
             // Get first name
             const firstName = profile.user.name.trim().split(' ')[0];
+
+            const footerAuthButtons = (
+                <div className="card-footer">
+                    <div className="row">
+                        <div className="col-6">
+                            <Link className="btn btn-secondary btn-block" id="editProfileButton" to={`/employees/profile/${profile.handle}/edit-profile`}>
+                                Edit Profile
+                            </Link>
+                        </div>
+                        <div className="col-6">
+                            <button className="btn btn-danger btn-block" type="button" id="deleteProfileButton" href="#">
+                                Delete Profile
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )
 
             profileContent = (
                 <div className="col">
@@ -52,7 +73,7 @@ class Profile extends Component {
                                     <div className="card-body">
                                         <h3 className="employee-name text-center">{profile.user.name}</h3>
                                         <p className="card-title employee-title">
-                                            <strong>Title:</strong> {profile.title}
+                                        <i className="fas fa-id-badge"></i> <strong>Title:</strong> {profile.title}
                                         </p>
                                         <p className="card-title">
                                             <i className="fas fa-envelope"></i> <strong>Email:</strong> <a href={`mailto:${profile.handle}@company.com`}>{profile.handle}@company.com</a>
@@ -71,26 +92,13 @@ class Profile extends Component {
                                         </p>
                                         <p>
                                             <strong>Employed Since:</strong> { ' ' }
-                                            <Moment format="MMM DD, YYYY">{profile.from}</Moment>
+                                            <Moment format="MMM&nbsp;DD,&nbsp;YYYY">{moment.utc(profile.from)}</Moment>
                                         </p>
                                         <p className="mb-0">
                                             <strong>Bio:</strong> {isEmpty(profile.bio) ? 'Bio Not Available' : profile.bio }
                                         </p>
                                     </div>
-                                    <div className="card-footer">
-                                        <div className="row">
-                                            <div className="col-6">
-                                                <Link className="btn btn-secondary btn-block" id="editProfileButton" to="/editProfile">
-                                                    Edit Profile
-                                                </Link>
-                                            </div>
-                                            <div className="col-6">
-                                                <button className="btn btn-danger btn-block" type="button" id="deleteProfileButton" href="#">
-                                                    Delete Profile
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    { user.id === profile.user._id  ? footerAuthButtons : null }
                                 </div>
                             </div>
                         </div>
@@ -128,12 +136,14 @@ class Profile extends Component {
 }
 
 Profile.propTypes = {
+    auth: PropTypes.object.isRequired,
     profile: PropTypes.object.isRequired,
     getProfileByHandle: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-    profile: state.profile
+    profile: state.profile,
+    auth: state.auth
 })
 
 export default connect(mapStateToProps, { getProfileByHandle })(Profile);

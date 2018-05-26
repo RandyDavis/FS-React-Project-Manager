@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link, withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import 'moment-timezone';
 import moment from 'moment';
 import TextFieldGroup from '../common/TextFieldGroup';
 import SelectListGroup from '../common/SelectListGroup';
@@ -50,7 +51,6 @@ class CreateProfile extends Component {
             profile.title = !isEmpty(profile.title) ? profile.title : '';
             profile.team = !isEmpty(profile.team) ? profile.team : '';
             profile.from = !isEmpty(profile.from) ? profile.from : '';
-            // profile.skills = !isEmpty(profile.skills) ? profile.skills : '';
             profile.location = !isEmpty(profile.location) ? profile.location : '';
             profile.bio = !isEmpty(profile.bio) ? profile.bio : '';
 
@@ -59,7 +59,7 @@ class CreateProfile extends Component {
                 handle: profile.handle,
                 title: profile.title,
                 team: profile.team,
-                from: moment(profile.from).format('YYYY-MM-DD'),
+                from: moment.utc(profile.from).format('YYYY-MM-DD'),
                 skills: skillsCSV,
                 location: profile.location,
                 bio: profile.bio
@@ -143,7 +143,7 @@ class CreateProfile extends Component {
                         <nav aria-label="breadcrumb">
                             <ol className="breadcrumb">
                                 <li className="breadcrumb-item"><Link to={"/dashboard"}>Dashboard</Link></li>
-                                <li className="breadcrumb-item"><Link to={"/profile"}>Profile</Link></li>
+                                <li className="breadcrumb-item"><Link to={`/employees/profile/${this.state.handle}`}>Profile</Link></li>
                                 <li className="breadcrumb-item active" aria-current="page">Edit Profile</li>
                             </ol>
                         </nav>

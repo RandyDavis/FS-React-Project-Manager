@@ -29,7 +29,7 @@ class Profiles extends Component {
             )
         } else {
             if (profiles.length > 0) {
-                profileItems = profiles.map(profile => (
+                profileItems = profiles.map((profile) => (
                     <ProfileItem key={profile._id} profile={profile} />
                 ))
             } else {
@@ -60,7 +60,7 @@ class Profiles extends Component {
                                 </Link>
                                 <div className="card mb-20">
                                     <div className="card-header main-color-bg">
-                                        <h2>Employee Roster</h2>
+                                        <h2>Employee Roster </h2>
                                     </div>
                                     <div className="container">
                                         <div className="row">
@@ -83,11 +83,13 @@ class Profiles extends Component {
 }
 
 Profiles.propTypes = {
+    auth: PropTypes.object.isRequired,
     getProfiles: PropTypes.func.isRequired,
     profile: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
+    auth: state.auth,
     profile: state.profile
 })
 

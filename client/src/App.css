@@ -43,7 +43,8 @@ body {
   width: 75px;
 }
 
-.ProfileItem i.fas, .Profile i.fas {
+.ProfileItem i.fas, .Profile i.fas,
+.Public-Profile-Item .card-body i.fas {
   width: 25px;
   text-align: center;
 }
@@ -55,16 +56,19 @@ body {
   font-size: 1.15rem;
 }
 
-.Profiles-Private .ProfileItem .card-body {
-  min-height: 400px;
+.Profiles-Private .Profile-Item .card-body {
+  /* min-height: 385px; */
+  min-height: 350px;
 }
 
-.Profiles-Public .ProfileItem .card-body {
-  min-height: 290px;
+.Profiles-Public .Public-Profile-Item .card-body {
+  min-height: 310px;
 }
 
-.Profiles-Private .ProfileItem .card-footer,
-.Profiles-Public .ProfileItem .card-footer {
+.Profiles-Private .Profile-Item .card-footer,
+.Profiles-Public .Profile-Item .card-footer,
+.Profiles-Private .Public-Profile-Item .card-footer,
+.Profiles-Public .Public-Profile-Item .card-footer {
   text-align: center;
   padding-left: .5rem;
   padding-right: .5rem;
@@ -188,6 +192,18 @@ h2 {
 /****** Footer END ******/
 
 
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .Profiles-Private .Profile-Item .card-body {
+    min-height: 420px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) {
+  .Profiles-Private .Profile-Item .card-body {
+    min-height: 385px;
+  }
+}
+
 @media screen and (min-width: 569px) and (max-width: 767px) {
   .nav-item {
       padding-left: 10px;
@@ -197,21 +213,21 @@ h2 {
       font-size: 2.5rem;
   }
 
-  .Profiles-Private .ProfileItem .card-body,
-  .Profiles-Public .ProfileItem .card-body {
+  .Profiles-Private .Profile-Item .card-body,
+  .Profiles-Public .Public-Profile-Item .card-body {
     min-height: 335px;
   }
 
-  .Profiles-Private .ProfileItem .card-footer,
-  .Profiles-Public .ProfileItem .card-footer {
+  .Profiles-Private .Profile-Item .card-footer,
+  .Profiles-Public .Public-Profile-Item .card-footer {
     padding-left: .75rem;
     padding-right: .25rem;
   }
 }
 
 @media screen and (min-width: 320px) and (max-width: 568px) {
-  .Profiles-Private .ProfileItem .card-body,
-  .Profiles-Public .ProfileItem .card-body {
+  .Profiles-Private .Profile-Item .card-body,
+  .Profiles-Public .Public-Profile-Item .card-body {
     min-height: 250px;
   }
 }

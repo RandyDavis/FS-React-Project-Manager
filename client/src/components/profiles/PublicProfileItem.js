@@ -4,21 +4,25 @@ import { Link } from 'react-router-dom';
 import isEmpty from '../../validation/is-empty';
 import '../../actions/authActions';
 
-class ProfileItem extends Component {
+
+class PublicProfileItem extends Component {
     render() {
         const { profile } = this.props;
-        const authImageLink = (
-            <Link to={`/employees/profile/${profile.handle}`}>
+        // const { isAuthenticated } = this.props;
+        // console.table(this.props);
+
+        const publicImageLink = (
+            <Link to={`/employees-public/profile/${profile.handle}`}>
                 <img src={profile.user.avatar} className="d-none d-sm-block" alt="" />
             </Link>
         )
 
         return (
-            <div className="Profile-Item col-sm-6 col-md-6 col-lg-4">
+            <div className="Public-Profile-Item col-sm-6 col-md-6 col-lg-4">
                 <div className="card overview-card">
-                    {authImageLink}
+                    { publicImageLink }
                     <div className="card-body">
-                        <h3 className="employee-name text-center"><Link to={`/employees/profile/${profile.handle}`}>{profile.user.name}</Link></h3>
+                        <h3 className="employee-name text-center"><Link to={`/employees-public/profile/${profile.handle}`}>{profile.user.name}</Link></h3>
                         <p className="card-title employee-title">
                             <i className="fas fa-id-badge"></i> Title: {profile.title}
                         </p>
@@ -41,8 +45,8 @@ class ProfileItem extends Component {
     }
 }
 
-ProfileItem.propTypes = {
+PublicProfileItem.propTypes = {
     profile: PropTypes.object.isRequired
 }
 
-export default ProfileItem;
+export default PublicProfileItem;

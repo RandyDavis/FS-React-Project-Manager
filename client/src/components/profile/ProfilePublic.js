@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import moment from 'moment';
 import Moment from 'react-moment';
 import Spinner from '../common/Spinner';
 import Header from '../common/Header';
@@ -50,7 +51,7 @@ class Profile extends Component {
                                         <div className="card-body">
                                             <h3 className="employee-name text-center">{profile.user.name}</h3>
                                             <p className="card-title employee-title">
-                                                <strong>Title:</strong> {profile.title}
+                                                <i className="fas fa-id-badge"></i> <strong>Title:</strong> {profile.title}
                                             </p>
                                             <p className="card-title">
                                                 <i className="fas fa-envelope"></i> <strong>Email:</strong> <a href={`mailto:${profile.handle}@company.com`}>{profile.handle}@company.com</a>
@@ -66,7 +67,7 @@ class Profile extends Component {
                                             </p>
                                             <p>
                                                 <strong>Joined:</strong> { ' ' }
-                                                <Moment format="MMM DD, YYYY">{profile.from}</Moment>
+                                                <Moment format="MMM DD, YYYY">{moment.utc(profile.from)}</Moment>
                                             </p>
                                             <p className="mb-0">
                                                 <strong>Bio:</strong> {isEmpty(profile.bio) ? 'Bio Not Available' : profile.bio }
