@@ -7,6 +7,7 @@ import { getCurrentProfile, deleteAccount } from '../../actions/profileActions';
 import Spinner from '../../components/common/Spinner';
 import Sidebar from '../common/Sidebar';
 import HeaderDropdown from '../common/HeaderDropdown';
+// import SuccessAlert from '../common/SuccessAlert';
 
 class Dashboard extends Component {
     componentDidMount() {
@@ -22,6 +23,8 @@ class Dashboard extends Component {
         const { user } = this.props.auth;
         const { profile, loading } = this.props.profile;
         let dashBoardContent;
+        // console.log('Prev Route: ', window.document.referrer);
+        // console.log('Current Route: ', window.location.pathname);
 
         if (profile === null || loading) {
             dashBoardContent = <Spinner />

@@ -10,7 +10,7 @@ const DropdownButton = (props) => (
         </button>
         <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
             <Link className="dropdown-item" to="/projects/create-project">{props.link1Text}</Link>
-            <Link className="dropdown-item" to="/create-employee">{props.link2Text}</Link>
+            <Link className="dropdown-item" to="/employees/create-new">{props.link2Text}</Link>
         </div>
     </div>
 )

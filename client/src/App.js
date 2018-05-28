@@ -24,6 +24,7 @@ import Profile from './components/profile/Profile';
 import CreateProject from './components/create-project/CreateProject';
 import Employees from './components/profiles/Profiles';
 import EmployeesPublic from './components/profiles/ProfilesPublic';
+import RegisterEmployee from './components/create-employee/RegisterEmployee';
 
 import './App.css';
 
@@ -77,6 +78,9 @@ class App extends Component {
             </Switch>
             <Switch>
               <PrivateRoute exact path='/projects/create-project' component={CreateProject} />
+            </Switch>
+            <Switch>
+              <PrivateRoute exact path='/employees/create-new' component={RegisterEmployee} />
             </Switch>
             <Footer />
           </div>
